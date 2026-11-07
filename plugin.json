@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "excalisheet",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Turn technical content and public docs pages into simple, editable Excalidraw diagrams and cheat sheets.",
   "license": "MIT",
   "keywords": ["excalidraw", "diagram", "cheat-sheet", "technical-writing", "visual-explainer", "docs"]
