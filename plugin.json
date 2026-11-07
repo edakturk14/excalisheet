@@ -1,8 +1,46 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "excalisheet",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Turn technical content and public docs pages into simple, editable Excalidraw diagrams and cheat sheets.",
+  "author": {
+    "name": "Eda Akturk"
+  },
+  "homepage": "https://github.com/edakturk14/excalisheet",
+  "repository": "https://github.com/edakturk14/excalisheet",
   "license": "MIT",
-  "keywords": ["excalidraw", "diagram", "cheat-sheet", "technical-writing", "visual-explainer", "docs"]
+  "keywords": ["excalidraw", "diagram", "cheat-sheet", "technical-writing", "visual-explainer", "docs"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Excalisheet",
+        "shortDescription": "Technical visuals, simplified",
+        "longDescription": "Turn technical posts, notes, concepts, and public docs pages into simple, editable Excalidraw diagrams or one-page cheat sheets. Excalisheet removes unnecessary detail and prioritizes clarity.",
+        "developerName": "Eda Akturk",
+        "category": "Developer Tools",
+        "capabilities": ["Interactive"],
+        "defaultPrompt": [
+          "Turn this technical post into a simple cheat sheet.",
+          "Make a diagram explaining KV cache.",
+          "Turn this docs page into a cheat sheet: https://docs.weaveos.com/router/overview"
+        ],
+        "websiteURL": "https://github.com/edakturk14/excalisheet",
+        "supportURL": "https://github.com/edakturk14/excalisheet/issues",
+        "privacyPolicyURL": "https://github.com/edakturk14/excalisheet/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/edakturk14/excalisheet/blob/main/TERMS.md",
+        "brandColor": "#7C5CFC"
+      },
+      "review": {
+        "prompts": [
+          "Make a diagram explaining KV cache.",
+          "Turn this technical explanation into a one-page cheat sheet: A model receives tokens, processes the input, and generates output tokens one at a time.",
+          "Turn this docs page into a cheat sheet: https://docs.weaveos.com/router/overview",
+          "Make a simple diagram from this docs page focusing only on how a request gets routed: https://docs.weaveos.com/router/overview"
+        ]
+      },
+      "publication": {
+        "release_notes": "First public Excalisheet release. Adds Diagram and Cheat sheet modes, public docs URL input, editable .excalidraw output, and a deliberately simple visual system."
+      }
+    }
+  }
 }
