@@ -2,7 +2,7 @@
 
 Turn technical content into **simple, editable Excalidraw visuals**.
 
-Excalisheet takes a blog post, technical explainer, rough notes, or one concept and turns it into an editable `.excalidraw` file.
+Excalisheet takes a blog post, technical explainer, rough notes, public docs page, or one concept and turns it into an editable `.excalidraw` file.
 
 > **If a detail is not necessary to understand the idea, leave it out.**
 
@@ -25,11 +25,38 @@ The output is one focused Excalidraw diagram.
 
 ### Cheat sheet
 
-For a full blog post or technical explainer.
+For a full blog post, technical explainer, or docs overview.
 
 Excalisheet finds the main question, removes anything that does not help answer it, reduces the source to the few sections needed to tell the story, and ends with a short **In short** flow.
 
 The output is one shareable, editable Excalidraw cheat sheet.
+
+## Inputs
+
+You can give Excalisheet:
+
+- pasted text
+- rough notes
+- a blog post
+- a technical article
+- a public docs URL
+- a public webpage URL
+
+Examples:
+
+```text
+@Excalisheet turn this post into a cheat sheet
+```
+
+```text
+@Excalisheet make a diagram explaining KV cache
+```
+
+```text
+@Excalisheet turn https://docs.weaveos.com/router/overview into a cheat sheet
+```
+
+For docs pages, Excalisheet focuses on the main page content and ignores navigation, sidebars, footer links, and unrelated boilerplate.
 
 ## The design system
 
