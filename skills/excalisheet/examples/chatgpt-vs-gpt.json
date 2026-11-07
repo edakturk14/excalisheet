@@ -1,0 +1,17 @@
+{
+  "mode": "diagram",
+  "title": "ChatGPT is not the model",
+  "accent": "#7C5CFC",
+  "accent_tint": "#F4F0FF",
+  "layout": "compare",
+  "data": {
+    "left": {
+      "title": "ChatGPT = app",
+      "body": ["Chat interface", "Conversation history", "App instructions"]
+    },
+    "right": {
+      "title": "GPT = model",
+      "body": ["Learned weights", "Generates a response"]
+    }
+  }
+}
