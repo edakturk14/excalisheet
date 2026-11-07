@@ -1,0 +1,89 @@
+{
+  "mode": "cheatsheet",
+  "title": "What happens after you hit send on ChatGPT?",
+  "subtitle": "A simple look at the infrastructure behind ChatGPT, from your prompt to the answer.",
+  "accent": "#7C5CFC",
+  "accent_tint": "#F4F0FF",
+  "sections": [
+    {
+      "number": "01",
+      "title": "ChatGPT ≠ GPT",
+      "why": "The app and the model are different things.",
+      "layout": "compare",
+      "data": {
+        "left": {
+          "title": "ChatGPT = app",
+          "body": ["Chat interface", "Conversation history", "App instructions"]
+        },
+        "right": {
+          "title": "GPT = model",
+          "body": ["Learned weights", "Generates a response"]
+        }
+      }
+    },
+    {
+      "number": "02",
+      "title": "Where does it run?",
+      "why": "On servers, usually with GPUs for speed and scale.",
+      "layout": "stack",
+      "data": {
+        "stack_title": "SERVER",
+        "stack_count": 3,
+        "details": [
+          {"title": "CPU + RAM", "body": ["Runs software", "Handles requests"]},
+          {"title": "GPU + VRAM", "body": ["Runs model work", "Holds weights + working data"]}
+        ]
+      }
+    },
+    {
+      "number": "03",
+      "title": "What does the model receive?",
+      "why": "Your text is turned into tokens for the model to process.",
+      "layout": "tokens",
+      "data": {
+        "prompt": "Summarize my rent contract.",
+        "context_title": "Input can include:",
+        "context": ["Your question", "Document text", "Chat history + instructions"],
+        "outputs": ["Input tokens", "Output tokens"]
+      }
+    },
+    {
+      "number": "04",
+      "title": "Prefill + decode + KV cache",
+      "why": "The model processes input, generates output, and saves reusable work.",
+      "layout": "flow",
+      "data": {
+        "steps": [
+          {"title": "Input tokens", "body": []},
+          {"title": "Prefill", "body": ["Process input"]},
+          {"title": "KV cache", "body": ["Saved results"]},
+          {"title": "Decode", "body": ["Generate output"]},
+          {"title": "Output tokens", "body": []}
+        ],
+        "note": "Prefix caching can also reuse work on later similar requests."
+      }
+    },
+    {
+      "number": "05",
+      "title": "Where does your request go?",
+      "why": "A routing system decides which server should handle it.",
+      "layout": "route",
+      "data": {
+        "source": "Your request",
+        "router": {
+          "title": "Routing",
+          "body": ["Saved work", "Memory", "Load"]
+        },
+        "destinations": ["Server 1", "Server 2", "Server 3"],
+        "note": "llm-d is one open-source project built for this."
+      }
+    }
+  ],
+  "summary": [
+    "App prepares request",
+    "Routing picks a server",
+    "Input becomes tokens",
+    "GPU processes it",
+    "Answer streams back"
+  ]
+}
