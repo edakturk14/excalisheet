@@ -55,8 +55,8 @@ For one focused docs concept, prefer `diagram`.
 
 1. Read the source completely.
 2. Identify the ONE question the visual should answer.
-3. List only the facts needed to answer that question.
-4. Delete everything interesting but unnecessary.
+3. List the facts needed to answer that question.
+4. Delete everything that is interesting but not necessary.
 5. Decide whether this should be a `diagram` or `cheatsheet`.
 6. Choose the simplest layout that explains the idea.
 
