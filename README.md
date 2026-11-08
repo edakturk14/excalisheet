@@ -1,14 +1,14 @@
 # Excalisheet
 
-Turn technical content into **simple, editable Excalidraw visuals**.
+Turn technical content into **simple visuals**.
 
-Excalisheet takes a blog post, technical explainer, rough notes, public docs page, or one concept and turns it into an editable `.excalidraw` file.
+Excalisheet takes a blog post, technical explainer, rough notes, public docs page, terms, images, or one concept and turns it into a clean visual.
 
 > **If a detail is not necessary to understand the idea, leave it out.**
 
 That is the main rule.
 
-## Two modes
+## Three modes
 
 ### Diagram
 
@@ -19,17 +19,31 @@ Examples:
 - how a KV cache works
 - what model routing does
 - ChatGPT vs GPT
-- a request flowing through a system
 
-The output is one focused Excalidraw diagram.
+Output: editable `.excalidraw`.
 
 ### Cheat sheet
 
 For a full blog post, technical explainer, or docs overview.
 
-Excalisheet finds the main question, removes anything that does not help answer it, reduces the source to the few sections needed to tell the story, and ends with a short **In short** flow.
+Excalisheet finds the main question, removes anything that does not help answer it, and reduces the source to the few sections needed to tell the story.
 
-The output is one shareable, editable Excalidraw cheat sheet.
+Output: editable `.excalidraw`.
+
+### Banner
+
+For an X header, social banner, hero image, or landscape visual.
+
+Examples:
+- make an X banner about inference
+- turn this post into a banner
+- make a banner from this docs page
+- make a landscape banner using these terms: tokens, prefill, decode, KV cache
+- make a banner using these images and the terms model routing, cost, speed
+
+Output: finished landscape PNG.
+
+The default banner format is 3:1 with one clear idea, minimal copy, and a clean developer-tool/editorial style.
 
 ## Inputs
 
@@ -41,6 +55,8 @@ You can give Excalisheet:
 - a technical article
 - a public docs URL
 - a public webpage URL
+- terms or phrases
+- 1-3 images
 
 Examples:
 
@@ -56,55 +72,36 @@ Examples:
 @Excalisheet turn https://docs.weaveos.com/router/overview into a cheat sheet
 ```
 
-For docs pages, Excalisheet focuses on the main page content and ignores navigation, sidebars, footer links, and unrelated boilerplate.
+```text
+@Excalisheet make an X banner using these terms: model routing, cost, speed
+```
 
 ## The design system
 
 Excalisheet is deliberately restrained.
 
-- Excalidraw / Virgil font
-- white canvas
-- graphite text
-- thin gray borders
-- one accent color
 - short copy
 - generous whitespace
-- simple boxes and arrows
+- simple shapes
+- one clear visual idea
+- restrained colors
+- no unnecessary decoration
 
-No gradients. No blobs. No sparkles. No robot brains. No decorative complexity.
+No gradients, blobs, sparkles, robot brains, or generic AI-infographic styling unless explicitly requested.
 
 The goal is not to make technical content look impressive.
 
 The goal is to make it **easy to understand**.
 
-## How it works
-
-```text
-source content
-      ↓
-find the one question
-      ↓
-remove anything unnecessary
-      ↓
-choose the simplest visual structure
-      ↓
-build a small JSON spec
-      ↓
-render an editable .excalidraw file
-```
-
 ## Principles
 
 1. **Simple is better.**
-2. Start with one question.
-3. Every section needs a reason to exist.
-4. Each section should make the next one feel necessary.
-5. Prefer one short label over a paragraph.
-6. Prefer one arrow over an explanation of the arrow.
-7. Remove a section if the story still works without it.
-8. Never add jargon just because it exists in the source.
-9. Never invent technical facts to make the visual cleaner.
-10. The editable Excalidraw file is the primary output.
+2. Start with one idea.
+3. Every element needs a reason to exist.
+4. Prefer one short label over a paragraph.
+5. Remove something if the story still works without it.
+6. Never add jargon just because it exists in the source.
+7. Never invent technical facts to make a visual cleaner.
 
 ## Usage
 
@@ -112,41 +109,9 @@ The core workflow lives at:
 
 `skills/excalisheet/SKILL.md`
 
-Render the included example:
-
-```bash
-python skills/excalisheet/scripts/render_excalidraw.py \
-  skills/excalisheet/examples/chatgpt-inference.json \
-  chatgpt-inference.excalidraw
-```
-
-## Project structure
-
-```text
-excalisheet/
-├── README.md
-├── LICENSE
-├── plugin.json
-├── skills/
-│   └── excalisheet/
-│       ├── SKILL.md
-│       ├── references/
-│       │   ├── style-guide.md
-│       │   ├── diagram-mode.md
-│       │   ├── cheatsheet-mode.md
-│       │   └── spec-schema.md
-│       ├── scripts/
-│       │   └── render_excalidraw.py
-│       └── examples/
-│           └── chatgpt-inference.json
-└── docs/
-    ├── diagram.md
-    └── cheatsheet.md
-```
-
 ## Status
 
-Early open-source release. v0.1 intentionally focuses on the workflow and visual system before adding a UI.
+Early open-source release.
 
 ## License
 
