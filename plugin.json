@@ -1,28 +1,28 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "excalisheet",
-  "version": "0.2.0",
-  "description": "Turn technical content and public docs pages into simple, editable Excalidraw diagrams and cheat sheets.",
+  "version": "0.2.1",
+  "description": "Turn technical content and docs into simple Excalidraw diagrams, cheat sheets, and social banners.",
   "author": {
     "name": "Eda Akturk"
   },
   "homepage": "https://github.com/edakturk14/excalisheet",
   "repository": "https://github.com/edakturk14/excalisheet",
   "license": "MIT",
-  "keywords": ["excalidraw", "diagram", "cheat-sheet", "technical-writing", "visual-explainer", "docs"],
+  "keywords": ["excalidraw", "diagram", "cheat-sheet", "banner", "technical-writing", "visual-explainer", "docs"],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Excalisheet",
         "shortDescription": "Technical visuals, simplified",
-        "longDescription": "Turn technical posts, notes, concepts, and public docs pages into simple, editable Excalidraw diagrams or one-page cheat sheets. Excalisheet removes unnecessary detail and prioritizes clarity.",
+        "longDescription": "Turn technical posts, notes, concepts, public docs pages, terms, and images into simple editable Excalidraw diagrams, one-page cheat sheets, or clean landscape social banners. Excalisheet removes unnecessary detail and prioritizes clarity.",
         "developerName": "Eda Akturk",
         "category": "Developer Tools",
         "capabilities": ["Interactive"],
         "defaultPrompt": [
           "Turn this technical post into a simple cheat sheet.",
           "Make a diagram explaining KV cache.",
-          "Turn this docs page into a cheat sheet: https://docs.weaveos.com/router/overview"
+          "Make an X banner from this technical content."
         ],
         "websiteURL": "https://github.com/edakturk14/excalisheet",
         "supportURL": "https://github.com/edakturk14/excalisheet/issues",
@@ -35,11 +35,11 @@
           "Make a diagram explaining KV cache.",
           "Turn this technical explanation into a one-page cheat sheet: A model receives tokens, processes the input, and generates output tokens one at a time.",
           "Turn this docs page into a cheat sheet: https://docs.weaveos.com/router/overview",
-          "Make a simple diagram from this docs page focusing only on how a request gets routed: https://docs.weaveos.com/router/overview"
+          "Make an X banner from this technical content using the terms model routing, cost, and speed."
         ]
       },
       "publication": {
-        "release_notes": "First public Excalisheet release. Adds Diagram and Cheat sheet modes, public docs URL input, editable .excalidraw output, and a deliberately simple visual system."
+        "release_notes": "Adds Banner mode alongside Diagram and Cheat sheet modes. Banner mode creates simple landscape social visuals from posts, docs URLs, terms, and images."
       }
     }
   }
